@@ -68,3 +68,34 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Challenges of Live chat
+ - Get data live
+ - Update the UI
+ - Cannot push to chat continuously, it will freeze the page
+
+
+### Solution
+ - Websocket 
+    - There is a server & a frontend
+    - 2 way connection
+    - Passing data is very easy through events
+    - handshake between server & client
+    - bi-directional
+    - no regular interval
+    - Server sends a notification to UI, update it.
+    - Example: Live trading platform (Zerodha), whatsapp
+
+
+ - API polling
+   - UI request the server 
+   - data flows from server to UI
+   - one directional
+   - and after an interval UI polls data from server
+   - Example: Gmail, youtube live chat
+
+### Near real time data
+ - The application which involves near real time data
+   - How UI will fetch the DATA?
+     - Websocket Connection
+     - API polling
